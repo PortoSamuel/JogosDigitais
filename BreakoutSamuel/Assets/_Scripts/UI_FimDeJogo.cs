@@ -16,16 +16,16 @@ public class UI_FimDeJogo : MonoBehaviour
 
         if (gm.vidas > 0)
         {
-            message.text = "Você Ganhou!!";
+            message.text = "YOU WIN";
         }
         else
         {
-            message.text = "Você Perdeu!!";
+            message.text = "GAME OVER";
         }
     }
 
     public void Voltar()
     {
-        gm.changeState(GameManager.GameState.GAME);
+        gm.changeState(GameManager.GameState.MENU);
     }
 }
