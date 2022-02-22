@@ -57,4 +57,5 @@ public class GameManager
         vidas = 3;
         pontos = 0;
     }
+    
 }
