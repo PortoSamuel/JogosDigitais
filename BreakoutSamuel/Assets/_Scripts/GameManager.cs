@@ -12,6 +12,8 @@ public class GameManager
         ENDGAME
     }
 
+    public List<GameState> StateList = new List<GameState>(2);
+
     public GameState gameState { get; private set; }
 
     public int vidas;
@@ -31,6 +33,9 @@ public class GameManager
         pontos = 0;
 
         gameState = GameState.MENU;
+
+        StateList.Add(GameState.MENU);
+        StateList.Add(GameState.MENU);
     }
 
     public static GameManager GetInstance()
@@ -45,7 +50,13 @@ public class GameManager
 
     public void changeState(GameState nextSate)
     {
-        if (nextSate == GameManager.GameState.GAME) Reset();
+        StateList[0] = gameState;
+        StateList[1] = nextSate;
+
+        if (
+            nextSate == GameManager.GameState.GAME &&
+            StateList[0] != GameManager.GameState.PAUSE
+        ) Reset();
 
         gameState = nextSate;
 
@@ -57,5 +68,4 @@ public class GameManager
         vidas = 3;
         pontos = 0;
     }
-    
 }

@@ -27,6 +27,20 @@ public class MovimentoBola : MonoBehaviour
     {
         if (gm.gameState != GameManager.GameState.GAME) return;
 
+        if (gm.StateList[0] == GameManager.GameState.MENU)
+        {
+            Vector3 playerPosition =
+                GameObject.FindGameObjectWithTag("Player").transform.position;
+
+            transform.position = playerPosition + new Vector3(0, 0.5f, 0);
+
+            float dirX = Random.Range(-5.0f, 5.0f);
+            float dirY = Random.Range(1.0f, 5.0f);
+            direcao = new Vector3(dirX, dirY).normalized;
+
+            gm.StateList[0] = GameManager.GameState.GAME;
+        }
+
         transform.position += direcao * Time.deltaTime * velocidade;
 
         Vector2 posicaoViewport =

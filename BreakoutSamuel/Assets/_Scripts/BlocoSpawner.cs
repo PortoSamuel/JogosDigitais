@@ -20,7 +20,7 @@ public class BlocoSpawner : MonoBehaviour
 
     void Construir()
     {
-        if (gm.gameState == GameManager.GameState.GAME)
+        if (gm.gameState == GameManager.GameState.GAME && gm.StateList[0] != GameManager.GameState.PAUSE)
         {
             foreach (Transform child in transform)
             {
