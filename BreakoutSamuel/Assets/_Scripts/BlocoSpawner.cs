@@ -4,18 +4,37 @@ using UnityEngine;
 
 public class BlocoSpawner : MonoBehaviour
 {
-
     public GameObject Bloco;
 
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0; i<12; i++){
-            for(int j=0; j<4; j++){
-                Vector3 posicao = new Vector3(-9 + 1.55f * i, 4 - 1.55f * j/2);
+        gm = GameManager.GetInstance();
 
-                Instantiate(Bloco, posicao, Quaternion.identity, transform);
+        GameManager.changeStateDelegate += Construir;
+
+        Construir();
+    }
+
+    void Construir()
+    {
+        if (gm.gameState == GameManager.GameState.GAME)
+        {
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+            for (int i = 0; i < 12; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    Vector3 posicao =
+                        new Vector3(-9 + 1.55f * i, 4 - 1.55f * j / 2);
+
+                    Instantiate(Bloco, posicao, Quaternion.identity, transform);
+                }
             }
         }
     }
@@ -23,6 +42,12 @@ public class BlocoSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (
+            transform.childCount <= 0 &&
+            gm.gameState == GameManager.GameState.GAME
+        )
+        {
+            gm.changeState(GameManager.GameState.ENDGAME);
+        }
     }
 }
