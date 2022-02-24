@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class BlocoSpawner : MonoBehaviour
 {
-    public GameObject Bloco;
+    public GameObject BlocoAzul;
+    public GameObject BlocoVerde;
+    public GameObject BlocoAmarelo;
+    public GameObject BlocoLaranja;
+    public GameObject BlocoVermelho;
 
     GameManager gm;
 
@@ -30,10 +34,37 @@ public class BlocoSpawner : MonoBehaviour
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    Vector3 posicao =
+                    if(j==4){
+                        Vector3 posicao =
                         new Vector3(-5 + 1.75f * i, 4 - 1.75f * j / 2);
 
-                    Instantiate(Bloco, posicao, Quaternion.identity, transform);
+                        Instantiate(BlocoAzul, posicao, Quaternion.identity, transform);
+                    }
+                    else if(j==3){
+                        Vector3 posicao =
+                        new Vector3(-5 + 1.75f * i, 4 - 1.75f * j / 2);
+
+                        Instantiate(BlocoVerde, posicao, Quaternion.identity, transform);
+                    }
+                    else if(j==2){
+                        Vector3 posicao =
+                        new Vector3(-5 + 1.75f * i, 4 - 1.75f * j / 2);
+
+                        Instantiate(BlocoAmarelo, posicao, Quaternion.identity, transform);
+                    }
+                    else if(j==1){
+                        Vector3 posicao =
+                        new Vector3(-5 + 1.75f * i, 4 - 1.75f * j / 2);
+
+                        Instantiate(BlocoLaranja, posicao, Quaternion.identity, transform);
+                    }
+                    else{
+                        Vector3 posicao =
+                        new Vector3(-5 + 1.75f * i, 4 - 1.75f * j / 2);
+
+                        Instantiate(BlocoVermelho, posicao, Quaternion.identity, transform);
+                    }
+                    
                 }
             }
         }

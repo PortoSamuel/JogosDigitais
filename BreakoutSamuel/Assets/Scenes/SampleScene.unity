@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b475f1e71928d409d9a01816471949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 15
+  velocidade: 7.9
 --- !u!212 &1674629954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2384,7 +2384,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aab419b3ba02d14f9e9a4fc8e6b02e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bloco: {fileID: 4987547028931131646, guid: 3bfea0c2e77965e458c750518e101c30, type: 3}
+  BlocoAzul: {fileID: 2343253461188819042, guid: e9b60df303ec47c4b856f85ec4603668, type: 3}
+  BlocoVerde: {fileID: 8597224519170532991, guid: 72853883faa0dc442be8575a22e2bace, type: 3}
+  BlocoAmarelo: {fileID: 5484501117688661297, guid: 6ef1e72117f2144439210b5491191323, type: 3}
+  BlocoLaranja: {fileID: 7400573076351589849, guid: 22385cb650e5eb74ba48352132792652, type: 3}
+  BlocoVermelho: {fileID: 4582370627833298280, guid: 157134a36f7e77446aaed1aa857c4b30, type: 3}
 --- !u!4 &2010932693
 Transform:
   m_ObjectHideFlags: 0
