@@ -26,12 +26,12 @@ public class BlocoSpawner : MonoBehaviour
             {
                 GameObject.Destroy(child.gameObject);
             }
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 7; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     Vector3 posicao =
-                        new Vector3(-9 + 1.55f * i, 4 - 1.55f * j / 2);
+                        new Vector3(-5 + 1.75f * i, 4 - 1.75f * j / 2);
 
                     Instantiate(Bloco, posicao, Quaternion.identity, transform);
                 }
